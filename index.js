@@ -14,6 +14,7 @@ const refs = {
 refs.btnStart.addEventListener('click', onStartClick);
 
 function onStartClick() {
+  refs.btnStart.setAttribute('disabled', true)
   if (refs.isActiv) {
     return;
   }
@@ -27,6 +28,7 @@ function onStartClick() {
 refs.btnStop.addEventListener('click', onStopClick);
 
 function onStopClick() {
+  refs.btnStart.removeAttribute('disabled', true)
   refs.isActiv = false;
   refs.body.removeEventListener('click', onStartClick);
   clearInterval(refs.colorsId);
